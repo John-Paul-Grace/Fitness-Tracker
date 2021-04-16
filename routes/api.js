@@ -10,8 +10,12 @@ router.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/stats.html'));
 });
 
-router.put("/api/workouts/:id", (req, res) => {
-    
-});
+router.get("/api/workouts", workoutController.getLastWorkout);
+
+router.get("/api/workouts/range", (req, res) => {});
+
+router.post("/api/workouts", (req, res) => {});
+
+router.put("/api/workouts/:id", (req, res) => {});
 
 module.exports = router;
