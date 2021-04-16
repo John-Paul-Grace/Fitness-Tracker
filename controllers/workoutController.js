@@ -1,13 +1,10 @@
 const Workout = require("../models/Workout.js");
 
 const workoutController = {
-    getLastWorkout: (req, res) => {
+    getAll: (req, res) => {
         Workout.find()
-            .then(data => {
-                res.json(data);
-            });
+            .then(data => res.json(data));
     },
-    getWorkoutsInRange: () => {},
     postNewWorkout: () => {},
     addToWorkout: () => {}
 };

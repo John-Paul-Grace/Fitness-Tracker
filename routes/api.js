@@ -10,9 +10,9 @@ router.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/stats.html'));
 });
 
-router.get("/api/workouts", workoutController.getLastWorkout);
+router.get("/api/workouts", workoutController.getAll);
 
-router.get("/api/workouts/range", (req, res) => {});
+router.get("/api/workouts/range", workoutController.getAll);
 
 router.post("/api/workouts", (req, res) => {});
 
