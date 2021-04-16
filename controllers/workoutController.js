@@ -12,7 +12,10 @@ const workoutController = {
         })
             .then(data => res.json(data));
     },
-    addToWorkout: () => {}
+    addExercise: (req, res) => {
+        Workout.updateOne({ _id: req.params.id }, { $push: { exercises: req.body }})
+            .then(data => res.json(data));
+    }
 };
 
 module.exports = workoutController;
