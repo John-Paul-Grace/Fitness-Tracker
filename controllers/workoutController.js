@@ -5,7 +5,13 @@ const workoutController = {
         Workout.find()
             .then(data => res.json(data));
     },
-    postNewWorkout: () => {},
+    createNew: (req, res) => {
+        Workout.create({
+            day: new Date(new Date().setDate(new Date().getDate() - 4)),
+            exercises: []
+        })
+            .then(data => res.json(data));
+    },
     addToWorkout: () => {}
 };
 

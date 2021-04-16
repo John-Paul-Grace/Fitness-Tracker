@@ -14,7 +14,7 @@ router.get("/api/workouts", workoutController.getAll);
 
 router.get("/api/workouts/range", workoutController.getAll);
 
-router.post("/api/workouts", (req, res) => {});
+router.post("/api/workouts", workoutController.createNew);
 
 router.put("/api/workouts/:id", (req, res) => {});
 
