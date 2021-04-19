@@ -7,13 +7,20 @@ const workoutController = {
     },
     createNew: (req, res) => {
         Workout.create({
-            day: new Date(new Date().setDate(new Date().getDate() - 4)),
-            exercises: []
+            day: new Date(new Date().setDate(new Date().getDate())),
+            exercises: [],
+            totalDuration: 0
         })
             .then(data => res.json(data));
     },
     addExercise: (req, res) => {
-        Workout.updateOne({ _id: req.params.id }, { $push: { exercises: req.body }})
+        Workout.updateOne(
+            { _id: req.params.id },
+            {
+                $push: { exercises: req.body },
+                $inc: { totalDuration: req.body.duration }
+            }
+        )
             .then(data => res.json(data));
     }
 };
