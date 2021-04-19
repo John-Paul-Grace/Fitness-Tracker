@@ -32,12 +32,19 @@ function populateChart(data) {
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
 
+  // Gets the html elements intended to hold the total weight and duration
   const totalDurationEl = document.querySelector("#total-duration");
   const totalWeightEl = document.querySelector("#total-weight");
 
-  const totalDuration = durations.reduce((total, next) => total + next);
-  const totalWeight = pounds.reduce((total, next) => total + next);
+  // Gets the last seven indexes from the durations and pounds arrays
+  const lastSevenDurations = durations.slice(durations.length - 7, durations.length);
+  const lastSevenWeights = pounds.slice(pounds.length - 7, pounds.length);
 
+  // Reduces the last seven indexes of durations and pounds to get their totals
+  const totalDuration = lastSevenDurations.reduce((total, next) => total + next);
+  const totalWeight = lastSevenWeights.reduce((total, next) => total + next);
+
+  // Appends the total duration and total weight into the html elements
   totalDurationEl.append(totalDuration);
   totalWeightEl.append(totalWeight);
 
