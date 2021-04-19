@@ -6,6 +6,14 @@ const workoutController = {
         Workout.find()
             .then(data => res.json(data));
     },
+    // Gets the seven most recent documents from the database
+    getPastSeven: (req, res) => {
+        Workout.find()
+            .sort({ _id: -1 })
+            .limit(7)
+            .sort({ _id: 1 })
+            .then(data => res.json(data));
+    },
     // Creates a new Workout document with the current date, an empty exercise array, and 0 totalDuration
     createNew: (req, res) => {
         Workout.create({

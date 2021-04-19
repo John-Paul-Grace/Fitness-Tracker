@@ -17,7 +17,7 @@ router.get("/stats", (req, res) => {
 // ==================================================================
 router.get("/api/workouts", workoutController.getAll);
 
-router.get("/api/workouts/range", workoutController.getAll);
+router.get("/api/workouts/range", workoutController.getPastSeven);
 
 router.post("/api/workouts", workoutController.createNew);
 
