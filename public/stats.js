@@ -36,17 +36,13 @@ function populateChart(data) {
   const totalDurationEl = document.querySelector("#total-duration");
   const totalWeightEl = document.querySelector("#total-weight");
 
-  // Gets the last seven indexes from the durations and pounds arrays
-  const lastSevenDurations = durations.slice(durations.length - 7, durations.length);
-  const lastSevenWeights = pounds.slice(pounds.length - 7, pounds.length);
-
-  // Reduces the last seven indexes of durations and pounds to get their totals
-  const totalDuration = lastSevenDurations.reduce((total, next) => total + next);
-  const totalWeight = lastSevenWeights.reduce((total, next) => total + next);
+  // Reduces the durations and pounds to get their totals
+  const totalDuration = durations.reduce((total, next) => total + next);
+  const totalPounds = pounds.reduce((total, next) => total + next);
 
   // Appends the total duration and total weight into the html elements
   totalDurationEl.append(totalDuration);
-  totalWeightEl.append(totalWeight);
+  totalWeightEl.append(totalPounds);
 
   const daysOfWeek = [
     'Sunday',
