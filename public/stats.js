@@ -32,6 +32,15 @@ function populateChart(data) {
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
 
+  const totalDurationEl = document.querySelector("#total-duration");
+  const totalWeightEl = document.querySelector("#total-weight");
+
+  const totalDuration = durations.reduce((total, next) => total + next);
+  const totalWeight = pounds.reduce((total, next) => total + next);
+
+  totalDurationEl.append(totalDuration);
+  totalWeightEl.append(totalWeight);
+
   const daysOfWeek = [
     'Sunday',
     'Monday',
