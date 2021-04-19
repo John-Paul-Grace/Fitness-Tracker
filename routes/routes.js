@@ -4,6 +4,10 @@ const workoutController = require("../controllers/workoutController.js");
 
 // HTML Routes
 // ==================================================================
+router.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 router.get("/exercise", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/exercise.html'));
 });
