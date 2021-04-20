@@ -32,17 +32,17 @@ function populateChart(data) {
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
 
-  // Gets the html elements intended to hold the total weight and duration
-  const totalDurationEl = document.querySelector("#total-duration");
-  const totalWeightEl = document.querySelector("#total-weight");
+  // // Gets the html elements intended to hold the total weight and duration
+  // const totalDurationEl = document.querySelector("#total-duration");
+  // const totalWeightEl = document.querySelector("#total-weight");
 
-  // Reduces the durations and pounds to get their totals
-  const totalDuration = durations.reduce((total, next) => total + next);
-  const totalPounds = pounds.reduce((total, next) => total + next);
+  // // Reduces the durations and pounds to get their totals
+  // const totalDuration = durations.reduce((total, next) => total + next);
+  // const totalPounds = pounds.reduce((total, next) => total + next);
 
-  // Appends the total duration and total weight into the html elements
-  totalDurationEl.append(totalDuration);
-  totalWeightEl.append(totalPounds);
+  // // Appends the total duration and total weight into the html elements
+  // totalDurationEl.append(totalDuration);
+  // totalWeightEl.append(totalPounds);
 
   const daysOfWeek = [
     'Sunday',
